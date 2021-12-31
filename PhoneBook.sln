@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{EE5D6E69-042A-4ACF-839B-0C90EF2CEC69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5600F367-5DF4-4184-AFFC-9C7CEB2E8D81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{033AEBE9-1826-4E14-9590-B81DD17753BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Core", "01 Core", "{27270A9F-8FE4-4C21-8915-EBC8D1413BEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Infra", "02 Infra", "{5BFF9670-B94A-4583-ABD5-5AB1E906D1B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 EndPoints", "03 EndPoints", "{46EF0B3A-1FD5-495F-913D-B3ECD27C229B}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{27270A9F-8FE4-4C21-8915-EBC8D1413BEF} = {5600F367-5DF4-4184-AFFC-9C7CEB2E8D81}
+		{5BFF9670-B94A-4583-ABD5-5AB1E906D1B2} = {5600F367-5DF4-4184-AFFC-9C7CEB2E8D81}
+		{46EF0B3A-1FD5-495F-913D-B3ECD27C229B} = {5600F367-5DF4-4184-AFFC-9C7CEB2E8D81}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B83DFE4D-DA47-4716-8F65-5DC9F14686FE}
+	EndGlobalSection
+EndGlobal
