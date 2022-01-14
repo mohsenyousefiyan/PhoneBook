@@ -18,9 +18,9 @@ namespace PhoneBook.Infra.DAL.SQL
         public DbSet<ContactPhoneNumber> ContactPhoneNumbers { get; set; }
         public DbSet<ContactGroup> ContactGroups { get; set; }
 
-        //public PhoneBookCommandDbContext(DbContextOptions options) : base(options)
-        //{
-        //}
+        public PhoneBookCommandDbContext(DbContextOptions options) : base(options)
+        {
+        }
 
         public PhoneBookCommandDbContext()
         {
@@ -89,6 +89,22 @@ namespace PhoneBook.Infra.DAL.SQL
 
             foreach (var item in modifiedEntities)
                 Entry(item.Entity).Property("LastEditDate").CurrentValue = DateTime.Now;
+        }
+    }
+
+    public class PhoneBookQueryDbContext : DbContext
+    {
+        public DbSet<Contact> Contacts { get; set; }
+        public PhoneBookQueryDbContext(DbContextOptions options) : base(options)
+        {
+        }
+        public PhoneBookQueryDbContext()
+        {
+
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);                        
         }
     }
 }

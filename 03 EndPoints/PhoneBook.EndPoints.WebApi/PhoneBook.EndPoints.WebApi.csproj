@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\01 Core\PhoneBook.Core.Domain\PhoneBook.Core.ApplicationService\PhoneBook.Core.ApplicationService.csproj" />
     <ProjectReference Include="..\..\01 Core\PhoneBook.Core.Domain\PhoneBook.Core.Domain.csproj" />
     <ProjectReference Include="..\..\02 Infra\DAL\PhoneBook.Infra.DAL.SQL\PhoneBook.Infra.DAL.SQL.csproj" />
   </ItemGroup>

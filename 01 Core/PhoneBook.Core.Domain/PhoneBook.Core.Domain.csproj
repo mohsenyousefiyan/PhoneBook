@@ -1,22 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>	 
   </PropertyGroup>
-
+	
+	
   <ItemGroup>
-    <Folder Include="Contacts\Commands\" />
     <Folder Include="Contacts\Dtos\" />
-    <Folder Include="Contacts\Repositories\" />
     <Folder Include="Contacts\QueryResults\" />
     <Folder Include="Contacts\Queries\" />
     <Folder Include="Groups\Dtos\" />
     <Folder Include="Groups\QueryResults\" />
     <Folder Include="Groups\Queries\" />
   </ItemGroup>
-
+	
+	
   <ItemGroup>
-    <PackageReference Include="FrameWork.Core.Domain" Version="1.0.1" />
+    <Reference Include="FrameWork.Core.Domain">
+      <HintPath>..\..\DLLS\FrameWork.Core.Domain.dll</HintPath>
+    </Reference>
   </ItemGroup>
+	
 
 </Project>
