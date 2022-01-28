@@ -16,9 +16,7 @@
 	
 	
   <ItemGroup>
-    <Reference Include="FrameWork.Core.Domain">
-      <HintPath>..\..\DLLS\FrameWork.Core.Domain.dll</HintPath>
-    </Reference>
+	  <PackageReference Include="FrameWork.Core.Domain" Version="1.0.1" />
   </ItemGroup>
 	
 

@@ -1,10 +1,12 @@
-﻿using FrameWork.Core.Domain.ApplicationServices.Commands;
+﻿using AutoMapper;
+using FrameWork.Core.Domain.ApplicationServices.Commands;
 using FrameWork.Core.Domain.ApplicationServices.Queries;
 using FrameWork.Core.Domain.Data;
 using FrameWork.EndPoints.WebApi.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PhoneBook.Core.ApplicationService.Contacts.CommandHandlers;
 using PhoneBook.Core.Domain.Contacts.Commands;
 using PhoneBook.Core.Domain.Contacts.Repositories;
 using PhoneBook.Infra.DAL.SQL;
@@ -25,12 +27,12 @@ namespace PhoneBook.EndPoints.WebApi.Extentions
         {
             services.AddDbContextPool<PhoneBookCommandDbContext>(option =>
             {
-                option.UseSqlServer(configuration.GetConnectionString("CommandDbConnection"));
+                option.UseSqlServer(configuration.GetConnectionString("CommandDbConStr"));
             });
 
             services.AddDbContext<PhoneBookQueryDbContext>(option =>
             {
-                option.UseSqlServer(configuration.GetConnectionString("QueryDbConnection"));
+                option.UseSqlServer(configuration.GetConnectionString("QueryDbConStr"));
             });
 
         }
@@ -42,7 +44,7 @@ namespace PhoneBook.EndPoints.WebApi.Extentions
         }
         public static void RegisterCommandHandlers(this IServiceCollection services)
         {
-            services.AddScoped<CommandHandler<ContactRegisterCommand>>();           
+            services.AddScoped<CommandHandler<ContactRegisterCommand>, ContactRegisterCommandHandler>();           
         }
         public static void RegisterQueryHandlers(this IServiceCollection services)
         {
@@ -56,6 +58,9 @@ namespace PhoneBook.EndPoints.WebApi.Extentions
            
         }
 
-           
+        public static void RegisTerthirdParties(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(Startup));           
+        }
     }
 }

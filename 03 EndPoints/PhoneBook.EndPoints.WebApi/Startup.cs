@@ -31,6 +31,7 @@ namespace PhoneBook.EndPoints.WebApi
             services.RegisterCommandHandlers();
             services.RegisterQueryHandlers();
             services.RegisterRepositories();
+            services.RegisTerthirdParties();
 
 
             services.AddControllers();

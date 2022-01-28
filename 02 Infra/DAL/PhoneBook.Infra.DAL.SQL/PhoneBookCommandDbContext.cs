@@ -22,10 +22,10 @@ namespace PhoneBook.Infra.DAL.SQL
         {
         }
 
-        public PhoneBookCommandDbContext()
-        {
+        //public PhoneBookCommandDbContext()
+        //{
 
-        }
+        //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -98,10 +98,10 @@ namespace PhoneBook.Infra.DAL.SQL
         public PhoneBookQueryDbContext(DbContextOptions options) : base(options)
         {
         }
-        public PhoneBookQueryDbContext()
-        {
+        //public PhoneBookQueryDbContext()
+        //{
 
-        }
+        //}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);                        

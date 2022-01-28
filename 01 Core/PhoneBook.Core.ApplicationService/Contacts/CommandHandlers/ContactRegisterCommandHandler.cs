@@ -4,11 +4,6 @@ using FrameWork.Core.Domain.Enums;
 using PhoneBook.Core.Domain.Contacts.Commands;
 using PhoneBook.Core.Domain.Contacts.Entities;
 using PhoneBook.Core.Domain.Contacts.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PhoneBook.Core.ApplicationService.Contacts.CommandHandlers
 {
@@ -41,7 +36,7 @@ namespace PhoneBook.Core.ApplicationService.Contacts.CommandHandlers
 
             unitofWork.Commit();
 
-            return new CommandResult(EnuResultStatusCode.Success, true);            
+            return new CommandResult(EnuResultStatusCode.Success, true);
         }
     }
 }
