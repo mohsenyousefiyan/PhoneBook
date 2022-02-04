@@ -9,13 +9,14 @@ namespace PhoneBook.EndPoints.WebApi.Infra.MapperConfig
     {
         public ContactMappConfig()
         {
-            CreateMap<ContactRegisterModel, ContactRegisterCommand>()
-                .ForMember(dest => dest.Image, opt => opt.MapFrom(src => Convert.FromBase64String(src.Image)))
-                .BeforeMap((src, dest) =>
-            {
-                try { dest.Image = Convert.FromBase64String(src.Image); }
-                catch { src.Image = null; }
-            });
+            CreateMap<ContactRegisterModel, ContactRegisterCommand>();
+            CreateMap<ContactEditModel, ContactUpdateCommand>();
+            //    .ForMember(dest => dest.Image, opt => opt.MapFrom(src => Convert.FromBase64String(src.Image)))
+            //    .BeforeMap((src, dest) =>
+            //{
+            //    try { dest.Image = Convert.FromBase64String(src.Image); }
+            //    catch { src.Image = null; }
+            //});
         }
     }
 }

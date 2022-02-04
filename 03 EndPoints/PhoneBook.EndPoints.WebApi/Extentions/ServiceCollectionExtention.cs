@@ -44,7 +44,9 @@ namespace PhoneBook.EndPoints.WebApi.Extentions
         }
         public static void RegisterCommandHandlers(this IServiceCollection services)
         {
-            services.AddScoped<CommandHandler<ContactRegisterCommand>, ContactRegisterCommandHandler>();           
+            services.AddScoped<CommandHandler<ContactRegisterCommand>, ContactRegisterCommandHandler>();
+            services.AddScoped<CommandHandler<ContactUpdateCommand>, ContactEditCommandHandler>();
+            services.AddScoped<CommandHandler<ContactDeleteCommand>, ContactDeleteCommandHandler>();
         }
         public static void RegisterQueryHandlers(this IServiceCollection services)
         {

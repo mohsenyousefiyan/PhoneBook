@@ -22,10 +22,24 @@ namespace PhoneBook.EndPoints.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register([FromBody] ContactRegisterModel model)
+        public async Task<IActionResult> Register([FromForm] ContactRegisterModel model)
         {
             ContactRegisterCommand command = mapper.Map< ContactRegisterCommand >(model);
             //command.ClientIPAddress = HttpContext.Request.HttpContext.Connection.RemoteIpAddress.ToString();            
+            return requestHandler.HandleRequest(command, commandDispatcher.Dispatch);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> EditContact([FromBody]ContactEditModel model)
+        {
+            ContactUpdateCommand command = mapper.Map<ContactUpdateCommand>(model);           
+            return requestHandler.HandleRequest(command, commandDispatcher.Dispatch);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteContact([FromQuery]  int id)
+        {
+            ContactDeleteCommand command =new ContactDeleteCommand { Id = id};  
             return requestHandler.HandleRequest(command, commandDispatcher.Dispatch);
         }
     }
