@@ -9,6 +9,9 @@
     <PackageReference Include="FrameWork.EndPoints.WebApi" Version="1.0.0" />
     <PackageReference Include="FrameWork.Infra.Resources" Version="1.0.0" />
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+	<PackageReference Include="FrameWork.Utilities" Version="1.0.0" />
+	<PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+	<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
       <PrivateAssets>all</PrivateAssets>
@@ -21,6 +24,7 @@
     <ProjectReference Include="..\..\01 Core\PhoneBook.Core.ApplicationService\PhoneBook.Core.ApplicationService.csproj" />
     <ProjectReference Include="..\..\01 Core\PhoneBook.Core.Domain\PhoneBook.Core.Domain.csproj" />
     <ProjectReference Include="..\..\02 Infra\DAL\PhoneBook.Infra.DAL.SQL\PhoneBook.Infra.DAL.SQL.csproj" />
+    <ProjectReference Include="..\..\02 Infra\PhoneBook.Infra.CommonServices\PhoneBook.Infra.CommonServices.csproj" />
   </ItemGroup>
 
 </Project>

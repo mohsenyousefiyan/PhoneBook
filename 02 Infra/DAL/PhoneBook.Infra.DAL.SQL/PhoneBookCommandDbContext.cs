@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PhoneBook.Core.Domain.Contacts.Entities;
 using PhoneBook.Core.Domain.Groups.Entities;
+using PhoneBook.Core.Domain.Users.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace PhoneBook.Infra.DAL.SQL
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<ContactPhoneNumber> ContactPhoneNumbers { get; set; }
         public DbSet<ContactGroup> ContactGroups { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public PhoneBookCommandDbContext(DbContextOptions options) : base(options)
         {

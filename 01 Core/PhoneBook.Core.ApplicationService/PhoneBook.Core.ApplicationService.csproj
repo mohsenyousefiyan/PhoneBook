@@ -6,6 +6,7 @@
 	
 	<ItemGroup>
 		<PackageReference Include="FrameWork.Core.Domain" Version="1.0.1" />
+		<PackageReference Include="FrameWork.Utilities" Version="1.0.0" />		
 	</ItemGroup>
 	
 	<ItemGroup>

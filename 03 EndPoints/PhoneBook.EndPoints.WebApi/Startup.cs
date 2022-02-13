@@ -1,16 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 using PhoneBook.EndPoints.WebApi.Extentions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PhoneBook.EndPoints.WebApi
 {
@@ -31,14 +24,12 @@ namespace PhoneBook.EndPoints.WebApi
             services.RegisterCommandHandlers();
             services.RegisterQueryHandlers();
             services.RegisterRepositories();
+            services.RegisterCommonServices();
+            services.RegisterOptions(Configuration);
             services.RegisTerthirdParties();
+            services.AddJwtAuthentication(Configuration);
 
-
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PhoneBook.EndPoints.WebApi", Version = "v1" });
-            });
+            services.AddControllers();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +44,8 @@ namespace PhoneBook.EndPoints.WebApi
 
             app.UseRouting();
 
+           
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
