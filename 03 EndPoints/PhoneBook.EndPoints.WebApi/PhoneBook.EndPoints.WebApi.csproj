@@ -6,7 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="FrameWork.Core.Domain" Version="1.0.1" />
-    <PackageReference Include="FrameWork.EndPoints.WebApi" Version="1.0.0" />
+    <PackageReference Include="FrameWork.EndPoints.WebApi" Version="1.0.1" />
+    
     <PackageReference Include="FrameWork.Infra.Resources" Version="1.0.0" />
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
 	<PackageReference Include="FrameWork.Utilities" Version="1.0.0" />

@@ -1,5 +1,6 @@
 ﻿using FrameWork.Core.Domain.Dtos.CommonDto;
 using FrameWork.Core.Domain.Enums;
+using FrameWork.Infra.Resources;
 using FrameWork.Utilities.Helpers;
 using Microsoft.IdentityModel.Tokens;
 using PhoneBook.Core.Domain.Common.Contracts;
@@ -48,7 +49,7 @@ namespace PhoneBook.Infra.CommonServices
             var securityToken = tokenHandler.CreateToken(descriptor);
             var token = tokenHandler.WriteToken(securityToken);
            
-            return new ServiceResult<TokenResultDto>(EnuResultStatusCode.Success, true, result: new TokenResultDto { Token = token, ExpireDate = expierDate });
+            return new ServiceResult<TokenResultDto>(EnuResultStatusCode.Success, true, result: new TokenResultDto { Token =$"bearer {token}", ExpireDate = expierDate });
         }
 
         private IEnumerable<Claim> GetClaims(UserTokenDto user)
@@ -56,9 +57,9 @@ namespace PhoneBook.Infra.CommonServices
 
             var list = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                new Claim(ClaimTypes.Name,user.UserName),
-                new Claim(ClaimTypes.Surname,user.FullName)
+                new Claim(IdentityClaimsResource.UserIdKeyName, user.UserId.ToString()),
+                new Claim(IdentityClaimsResource.UserNameKeyName,user.UserName),
+                new Claim(IdentityClaimsResource.UserLastNameKeyName,user.FullName)
             };
 
             return list;
